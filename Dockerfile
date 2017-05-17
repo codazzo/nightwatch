@@ -6,11 +6,13 @@ FROM alpine:3.4
 
 MAINTAINER Sebastian Tschan <mail@blueimp.net>
 
+ARG node_version=nodejs-lts
+
 RUN apk --no-cache add \
     # Install tini, a tiny but valid init for containers:
     tini \
     # Install NodeJS:
-    nodejs-lts \
+    $node_version \
     # Install ffmpeg for video recording:
     ffmpeg \
   && npm install -g \
