@@ -32,6 +32,9 @@ USER node
 
 WORKDIR /home/node
 
+RUN echo "Node version:"
+RUN node -v
+
 COPY wait-for.sh /usr/local/bin/wait-for
 COPY entrypoint.sh /usr/local/bin/entrypoint
 
